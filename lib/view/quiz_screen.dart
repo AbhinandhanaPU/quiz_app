@@ -81,8 +81,8 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               ),
               SizedBox(height: 50),
-              InkWell(
-                onTap: () {
+              ElevatedButton(
+                onPressed: () {
                   if (DataBase.quizList[value]["answer"] == checkValue) {
                     correctAnwser++;
                   } else {
@@ -101,20 +101,15 @@ class _QuizScreenState extends State<QuizScreen> {
                   checkValue = 5;
                   setState(() {});
                 },
-                child: Container(
-                  height: 55,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Center(
-                      child: Text(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
                     "NEXT",
                     style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white),
-                  )),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               )
             ],
